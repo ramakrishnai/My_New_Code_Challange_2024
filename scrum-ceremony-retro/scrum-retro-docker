@@ -1,0 +1,5 @@
+FROM openjdk:17
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} scrum-retrospection-service.jar
+ENTRYPOINT ["java","-jar","/scrum-retrospection-service.jar","-web -webAllowOthers -tcp -tcpAllowOthers -browser"]
+EXPOSE 9091
